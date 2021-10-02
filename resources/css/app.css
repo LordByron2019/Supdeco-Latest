@@ -1,3 +1,11 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.navWhite{
+    @apply bg-white bg-opacity-100 py-3 text-black;
+}
+
+.nav-list-item{
+    @apply hover:text-white
+}

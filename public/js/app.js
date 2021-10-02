@@ -1967,6 +1967,22 @@
 
 __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 
+window.addEventListener('scroll', function (e) {
+  var faireQuelqueChose = function faireQuelqueChose() {};
+
+  if (window.scrollY === 0) {
+    window.requestAnimationFrame(function () {
+      var navbar = document.getElementById('navbar');
+      navbar.classList.remove("navWhite");
+    });
+  } else {
+    window.requestAnimationFrame(function () {
+      var navbar = document.getElementById('navbar');
+      navbar.classList.add("navWhite");
+    });
+  }
+});
+
 /***/ }),
 
 /***/ "./resources/css/app.css":
