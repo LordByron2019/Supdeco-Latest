@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 Route::resource('filieres', \App\Http\Controllers\FiliereController::class)->except(['update', 'store', 'destroy']);
 Route::post('filieres/store', [\App\Http\Controllers\FiliereController::class, 'store'])->name('filieres.store');
 Route::post('filieres/{filiere}/update', [\App\Http\Controllers\FiliereController::class, 'update'])->name('filieres.update');
