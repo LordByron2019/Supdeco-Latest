@@ -10,7 +10,7 @@
                 <a href="" class="">Formations</a>
             </li>
             <li class="transition duration-200 ease-in-out">
-                <a href="" class="">Contact</a>
+                <a href="{{route('contact')}}" class="">Contact</a>
             </li>
             <li class="transition duration-200 ease-in-out">
                 <a href=""

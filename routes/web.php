@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('contact');
 
 Route::resource('filieres', \App\Http\Controllers\FiliereController::class)->except(['update', 'store', 'destroy']);
 Route::post('filieres/store', [\App\Http\Controllers\FiliereController::class, 'store'])->name('filieres.store');
