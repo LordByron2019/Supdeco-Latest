@@ -19,9 +19,14 @@ class Filiere extends Model
         return $this->belongsTo(Parcour::class);
     }
 
+    public function admissions()
+    {
+        return $this->hasMany(Admissions::class);
+    }
+
     public function getDescriptionAttribute($value)
     {
-        if (Route::current()->getName() !== 'filieres.edit' && Route::current()->getName() !== 'filieres.show')
+        if (Route::current()->getName() !== 'filieres.edit' && Route::current()->getName() !== 'filieres.show' && Route::current()->getName() !== 'formations.show')
             return Str::limit($value,70);
 
         return $value;

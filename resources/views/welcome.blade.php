@@ -2,9 +2,21 @@
     <x-slot name="header">
         <div class="h-full grid place-items-center place-content-center pt-20">
             <div class="w-3/4 space-y-10 flex flex-col items-center text-white uppercase font-extrabold">
-                <h1 class="text-5xl text-center tracking-wider leading-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores facilis in laboriosam</h1>
                 <div class="">
-                    <a href="" class="px-6 py-3 uppercase border border-yellow-600 bg-yellow-600 hover:bg-transparent transition duration-400 ease-in">Admissions</a>
+                    <div class="">
+                        <h1 class="text-5xl text-center tracking-tight leading-normal text-yellow-500">Lorem ipsum dolor sit amet, consectetur.</h1>
+                    </div>
+
+                    <div class="text-center">
+                        <p class="text-xl tracking-tight leading-normal">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Beatae cupiditate dolores expedita illum impedit modi odit quis repellendus? Eligendi, voluptatibus.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="">
+                    <a href="{{route('admissions.index')}}" class="px-6 py-3 uppercase border border-yellow-600 bg-yellow-600 hover:bg-transparent transition duration-400 ease-in">Admissions</a>
                 </div>
             </div>
         </div>
@@ -27,130 +39,36 @@
             {{--Section content--}}
             <div class="">
                 <div class="grid grid-cols-4 gap-8">
-                    <div class="w-full shadow-lg bg-white bg-opacity-60">
-                        <div class="h-60 relative">
-                            <img src="{{asset('images/home-img.jpg')}}" alt="" class="w-full h-full">
-                            <div class="absolute inset-0 bg-blue-600 bg-opacity-30 flex items-end">
-                                <div class="py-3 px-2 w-full bg-blue-600 bg-opacity-95 relative">
-                                    <div class="w-4/5">
-                                        <h3 class="text-lg font-extrabold text-white uppercase">Licence</h3>
-                                        <div class="absolute -top-8 right-0 inline p-3 bg-yellow-600 bg-opacity-95">
-                                            <span class="uppercase text-md text-white">2 an(s)</span>
+                    @foreach($filieres as $filiere)
+                        <div class="w-full shadow-lg bg-white bg-opacity-60">
+                            <div class="h-60 relative">
+                                <img src="{{asset('images/home-img.jpg')}}" alt="" class="w-full h-full">
+                                <div class="absolute inset-0 bg-blue-600 bg-opacity-30 flex items-end">
+                                    <div class="py-3 px-2 w-full bg-blue-600 bg-opacity-95 relative">
+                                        <div class="w-4/5">
+                                            <h3 class="text-lg font-extrabold text-white uppercase">{{$filiere->parcour->name}}</h3>
+                                            <div class="absolute -top-8 right-0 inline p-3 bg-yellow-600 bg-opacity-95">
+                                                <span class="uppercase text-md text-white">{{$filiere->years}} an(s)</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="py-5 px-2 space-y-5">
-                            <h1 class="text-2xl text-center font-medium line-clamp-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
-                            <p class="text-center text-md line-clamp-3">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Aliquid consequuntur corporis cupiditate debitis deserunt dolore,
-                                ducimus eaque fugit hic ipsam iure minima nam nesciunt, odio,
-                                perspiciatis praesentium quae quasi quos recusandae sequi velit veritatis voluptatem.
-                            </p>
+                            <div class="py-5 px-2 space-y-5">
+                                <h1 class="text-2xl text-center font-medium line-clamp-2">{{$filiere->name}}</h1>
+                                <p class="text-center text-md line-clamp-3">
+                                    {{$filiere->description}}
+                                </p>
 
-                            <div class="text-center py-2">
-                                <a href=""
-                                   class="px-6 py-3 uppercase border border-yellow-600
+                                <div class="text-center py-2">
+                                    <a href="{{route('formations.show', $filiere)}}"
+                                       class="px-6 py-3 uppercase border border-yellow-600
                                bg-yellow-600 hover:bg-transparent transition
                                duration-400 ease-in">Consulter</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full shadow-lg bg-white bg-opacity-60">
-                        <div class="h-60 relative">
-                            <img src="{{asset('images/home-img.jpg')}}" alt="" class="w-full h-full">
-                            <div class="absolute inset-0 bg-blue-600 bg-opacity-30 flex items-end">
-                                <div class="py-3 px-2 w-full bg-blue-600 bg-opacity-95 relative">
-                                    <div class="w-4/5">
-                                        <h3 class="text-lg font-extrabold text-white uppercase">Licence</h3>
-                                        <div class="absolute -top-8 right-0 inline p-3 bg-yellow-600 bg-opacity-95">
-                                            <span class="uppercase text-md text-white">2 an(s)</span>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="py-5 px-2 space-y-5">
-                            <h1 class="text-2xl text-center font-medium line-clamp-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
-                            <p class="text-center text-md line-clamp-3">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Aliquid consequuntur corporis cupiditate debitis deserunt dolore,
-                                ducimus eaque fugit hic ipsam iure minima nam nesciunt, odio,
-                                perspiciatis praesentium quae quasi quos recusandae sequi velit veritatis voluptatem.
-                            </p>
-
-                            <div class="text-center py-2">
-                                <a href=""
-                                   class="px-6 py-3 uppercase border border-yellow-600
-                               bg-yellow-600 hover:bg-transparent transition
-                               duration-400 ease-in">Consulter</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full shadow-lg bg-white bg-opacity-60">
-                        <div class="h-60 relative">
-                            <img src="{{asset('images/home-img.jpg')}}" alt="" class="w-full h-full">
-                            <div class="absolute inset-0 bg-blue-600 bg-opacity-30 flex items-end">
-                                <div class="py-3 px-2 w-full bg-blue-600 bg-opacity-95 relative">
-                                    <div class="w-4/5">
-                                        <h3 class="text-lg font-extrabold text-white uppercase">Licence</h3>
-                                        <div class="absolute -top-8 right-0 inline p-3 bg-yellow-600 bg-opacity-95">
-                                            <span class="uppercase text-md text-white">2 an(s)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="py-5 px-2 space-y-5">
-                            <h1 class="text-2xl text-center font-medium line-clamp-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
-                            <p class="text-center text-md line-clamp-3">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Aliquid consequuntur corporis cupiditate debitis deserunt dolore,
-                                ducimus eaque fugit hic ipsam iure minima nam nesciunt, odio,
-                                perspiciatis praesentium quae quasi quos recusandae sequi velit veritatis voluptatem.
-                            </p>
-
-                            <div class="text-center py-2">
-                                <a href=""
-                                   class="px-6 py-3 uppercase border border-yellow-600
-                               bg-yellow-600 hover:bg-transparent transition
-                               duration-400 ease-in">Consulter</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full shadow-lg bg-white bg-opacity-60">
-                        <div class="h-60 relative">
-                            <img src="{{asset('images/home-img.jpg')}}" alt="" class="w-full h-full">
-                            <div class="absolute inset-0 bg-blue-600 bg-opacity-30 flex items-end">
-                                <div class="py-3 px-2 w-full bg-blue-600 bg-opacity-95 relative">
-                                    <div class="w-4/5">
-                                        <h3 class="text-lg font-extrabold text-white uppercase">Licence</h3>
-                                        <div class="absolute -top-8 right-0 inline p-3 bg-yellow-600 bg-opacity-95">
-                                            <span class="uppercase text-md text-white">2 an(s)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="py-5 px-2 space-y-5">
-                            <h1 class="text-2xl text-center font-medium line-clamp-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
-                            <p class="text-center text-md line-clamp-3">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Aliquid consequuntur corporis cupiditate debitis deserunt dolore,
-                                ducimus eaque fugit hic ipsam iure minima nam nesciunt, odio,
-                                perspiciatis praesentium quae quasi quos recusandae sequi velit veritatis voluptatem.
-                            </p>
-
-                            <div class="text-center py-2">
-                                <a href=""
-                                   class="px-6 py-3 uppercase border border-yellow-600
-                               bg-yellow-600 hover:bg-transparent transition
-                               duration-400 ease-in">Consulter</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             {{--Section content end--}}

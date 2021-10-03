@@ -44,7 +44,7 @@
         <div class="px-28 py-28 flex justify-center items-center bg-blue-600 bg-opacity-40">
             <div class="space-x-4 text-white">
                 <span class="text-lg uppercase">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-                <a href=""
+                <a href="{{route('admissions.index')}}"
                    class="px-6 py-3 uppercase border border-yellow-600
                                bg-yellow-600 hover:bg-transparent transition
                                duration-400 ease-in">Admissions</a>

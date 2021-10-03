@@ -13,13 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', \App\Http\Controllers\WelcomeController::class);
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+Route::resource('/contact', \App\Http\Controllers\ContactController::class);
+
+Route::resource('admissions', \App\Http\Controllers\AdmissionsController::class)->only('index', 'store');
+
+Route::resource('formations', \App\Http\Controllers\FormationController::class)->only('index');
+Route::get('formations/{filiere}', [\App\Http\Controllers\FormationController::class, 'show'])->name('formations.show');
 
 Route::resource('filieres', \App\Http\Controllers\FiliereController::class)->except(['update', 'store', 'destroy']);
 Route::post('filieres/store', [\App\Http\Controllers\FiliereController::class, 'store'])->name('filieres.store');

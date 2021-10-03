@@ -7,13 +7,13 @@
     <div class="">
         <ul id="nav-list" class="text-md uppercase font-bold flex items-center space-x-8">
             <li class="transition duration-200 ease-in-out">
-                <a href="" class="">Formations</a>
+                <a href="{{route('formations.index')}}" class="">Formations</a>
             </li>
             <li class="transition duration-200 ease-in-out">
-                <a href="{{route('contact')}}" class="">Contact</a>
+                <a href="{{route('contact.index')}}" class="">Contact</a>
             </li>
             <li class="transition duration-200 ease-in-out">
-                <a href=""
+                <a href="{{route('admissions.index')}}"
                    class="px-6 py-3 uppercase border border-yellow-600
                                bg-yellow-600 hover:bg-transparent transition
                                duration-400 ease-in">Admissions</a>
