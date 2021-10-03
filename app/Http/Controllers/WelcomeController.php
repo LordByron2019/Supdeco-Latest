@@ -18,7 +18,7 @@ class WelcomeController extends Controller
      */
     public function __invoke(Request $request): View|Factory|Application
     {
-        $filieres = Filiere::with('parcour')->get(['id', 'name', 'years', 'description', 'parcour_id']);
+        $filieres = Filiere::with('parcour')->take(8)->get(['id', 'name', 'years', 'description', 'parcour_id']);
         return view('welcome', compact('filieres'));
     }
 }

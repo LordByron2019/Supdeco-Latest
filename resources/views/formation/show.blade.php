@@ -1,6 +1,6 @@
 <x-user-layout class="h-[50vh]">
     <x-slot name="header">
-        <x-o-header :title="__('Formation en ' . $filiere->name .' '. $filiere->years )" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda eveniet numquam ut"/>
+        <x-o-header :title="__('Formation en ' . $filiere->name .' | '. $filiere->years .' an(s)' )" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda eveniet numquam ut"/>
     </x-slot>
 
     <section id="formation" class="relative">

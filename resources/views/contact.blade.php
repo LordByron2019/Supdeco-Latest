@@ -1,20 +1,12 @@
 <x-user-layout class="h-[50vh]">
     <x-slot name="header">
-        <div class="h-full grid place-items-center place-content-center pt-20">
-            <div class="w-full space-y-10 flex flex-col items-center text-white uppercase font-extrabold">
-                <h1 class="text-3xl text-center tracking-wider leading-normal">Contactez-nous</h1>
-            </div>
-        </div>
+        <x-o-header
+            :title="__('Contactez-nous')"
+            description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."/>
     </x-slot>
 
     <section id="contact" class="relative">
         <div class="flex flex-col items-center space-y-10 my-20 px-28">
-            {{--Section Description--}}
-            <div class="">
-                <p class="text-md font-medium uppercase">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam corporis ipsam minus!</p>
-            </div>
-            {{--Section Description end--}}
-
             {{--Section content--}}
             <div class="w-full">
                 <!-- Session Status -->

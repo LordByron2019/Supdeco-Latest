@@ -37,7 +37,7 @@
             {{--Section Description end--}}
 
             {{--Section content--}}
-            <div class="">
+            <div class="space-y-12">
                 <div class="grid grid-cols-4 gap-8">
                     @foreach($filieres as $filiere)
                         <div class="w-full shadow-lg bg-white bg-opacity-60">
@@ -69,6 +69,12 @@
                             </div>
                         </div>
                     @endforeach
+                </div>
+                <div class="text-center">
+                    <a href="{{route('formations.index')}}"
+                       class="px-6 py-3 uppercase border border-yellow-600
+                               bg-yellow-600 hover:bg-transparent transition
+                               duration-400 ease-in">Voir Plus</a>
                 </div>
             </div>
             {{--Section content end--}}
